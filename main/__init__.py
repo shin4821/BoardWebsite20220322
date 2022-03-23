@@ -20,26 +20,27 @@ from flask import jsonify
 
 app = Flask(__name__)
 csrf = CSRFProtect(app)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myweb"
+app.config["MONGO_URI"] = "mongodb://mongo:27017/myweb"
 app.config["SECRET_KEY"] = "abcd"
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes=30)
 mongo = PyMongo(app)
 
 
 #이미지, 첨부파일 저장할 경로 지정
-directoryForImage = "C:\\Python\\images"
-directoryForUpload = "C:\\Python\\uploads"
+#directoryForImage = "C:\\Python\\images"
+#directoryForUpload = "C:\\Python\\uploads"
 
-if not os.path.exists(directoryForImage):
-    os.makedirs(directoryForImage)
-BOARD_IMAGE_PATH = directoryForImage
+#if not os.path.exists(directoryForImage):
+#    os.makedirs(directoryForImage)
+#BOARD_IMAGE_PATH = directoryForImage
 
-if not os.path.exists(directoryForUpload):
-    os.makedirs(directoryForUpload)
-BOARD_ATTACH_FILE_PATH = directoryForUpload
+#if not os.path.exists(directoryForUpload):
+#    os.makedirs(directoryForUpload)
+#BOARD_ATTACH_FILE_PATH = directoryForUpload
 
-#BOARD_IMAGE_PATH = "\images"
-#BOARD_ATTACH_FILE_PATH = "\uploads"
+BOARD_IMAGE_PATH = "/files/images"
+BOARD_ATTACH_FILE_PATH = "/files/uploads"
+
 ALLOWED_EXTENSIONS=set(["txt", 'pdf', "png", "jpg", "jpeg", "gif"])
 app.config["BOARD_IMAGE_PATH"] = BOARD_IMAGE_PATH
 app.config["MAX_CONTENT_LENGTH"]= 15*1024*1024

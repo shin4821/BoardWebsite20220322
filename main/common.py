@@ -26,7 +26,7 @@ def login_required(f):
 
 
 def allowed_file(filename):
-    return "." in filename and filename.rsplit(".",1)[1] in ALLOWED_EXTENSIONS
+    return "." in filename and filename.rsplit(".",1)[1].lower() in ALLOWED_EXTENSIONS
 
 def rand_generator(length=8):
     char = ascii_lowercase + ascii_uppercase + digits

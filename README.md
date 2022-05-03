@@ -5,7 +5,7 @@
 * 기술스택: Python(flask), MongoDB, HTML/CSS/JS, Bootstrap, Docker, AWS
 * 데이터베이스: MongoDB
 * 개발환경: VS Code
-* 링크: http://www.shayboard.site/board/list
+* 링크: http://www.shayboard.site/board/list (AWS EC2 가격 청구로 인해 현재는 내린 상태입니다.)
 
 
 프로젝트 상세내용
